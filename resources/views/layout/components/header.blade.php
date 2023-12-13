@@ -1,4 +1,4 @@
-<header id="page-header">
+<header id="page-header ">
     <!-- Header Content -->
     <div class="content-header">
         <!-- Left Section -->

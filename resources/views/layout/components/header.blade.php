@@ -23,10 +23,24 @@
                 href="javascript:void(0)">
                 <i class="fa fa-moon"></i>
             </a>
-            <a class="btn btn-alt-success px-3" href="https://pixelcave.com/products/codebase?purchase=true&ref=demo">
-                <i class="fa fa-shopping-bag opacity-50"></i>
-                <span class="ms-1 d-none d-sm-inline-block">Purchase</span>
-            </a>
+            @auth
+                <a class="btn btn-alt-success px-3" href="{{ url('/home') }}">
+                    <i class="fa fa-shopping-bag opacity-50"></i>
+                    <span class="ms-1 d-none d-sm-inline-block">Home</span>
+                </a>
+            @else
+                <a class="btn btn-alt-success px-3" href="{{ route('auth.login') }}">
+                    <i class="fa fa-shopping-bag opacity-50"></i>
+                    <span class="ms-1 d-none d-sm-inline-block">Login</span>
+                </a>
+
+                <a class="btn btn-alt-success px-3" href="{{ route('auth.register') }}">
+                    <i class="fa fa-shopping-bag opacity-50"></i>
+                    <span class="ms-1 d-none d-sm-inline-block">Register</span>
+                </a>
+                {{-- @if (Route::has('register'))
+                @endif --}}
+            @endauth
         </div>
         <!-- END Right Section -->
     </div>
